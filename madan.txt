@@ -1,10 +1,1 @@
-<<<<<<< HEAD
-mkmkmjnjncdbhgbcgdnkmkmkmjknkmmk,lmknnhc
-kmkmkmkmkmkkmkkkkkkkkkkcnjnjnadh	
-=======
-kmkmkmkmkmkmwdcnndcjd
-<<<<<<< HEAD
->>>>>>> c4701bffddbfd41ea15d62abb608554325f6a98d
-=======
-madan mohan
->>>>>>> acb381a6f991c5f6227e925b177aebaf14c98711
+hello hello
