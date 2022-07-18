@@ -1,0 +1,61 @@
+Install ssh package on ubuntu:
+   sudo apt-get install openssh-server
+To start the service:
+   sudo service ssh start
+Configuration file location:
+    /etc/ssh/sshd_config
+
+Default port of ssh 22 if we want to change port no. of ssh service then we can change in /etc/ssh/sshd_config
+after that we will start the service
+Syntax for login:
+ssh with password:
+    ssh username@IP
+ssh with key:
+    ssh -i keyname username@IP
+
+ssh login when port is different:
+ ssh -i keyname username@ip -p portnumber
+
+SSH Security:
+   AllowUsers   ubuntu, root
+   DenyUsers    kali, test
+
+Secure copy (scp):
+when i am source:
+   scp -i keyname sourcefilelocation username@ip:/destinationlocation
+when i am destination:
+   scp -i keyname  username@ip:/sourcefilelocation   /home/jaya/destinationlocation
+when i am nor a source and neither a destination:
+   scp username@ip:/source username@ip:/destination
+
+SCP command when ssh port no. is different:
+
+scp -i keyname source -P portnumber username@ip
+
+SFTP: secure file transfer protocol
+    sftp -i keyname username@ip
+       get for download
+       put for upload
+
+How to generate ssh key:
+
+   ssh-keygen -t rsa -b 2048
+   t for type
+   b for bit
+ 
+ it will generate two file 
+ 1. id_rsa   (private key)
+ 2. id_rsa.pub (public key)
+
+rename id_rsa.pub to authorized_keys with below command
+  mv id_rsa.pub  authorized_keys
+ we will put public key in ~/.ssh folder 
+private key will be shared with client to login on ssh server
+
+to enable/disable password authentication in ssh:
+
+  go to /etc/ssh/sshd_config 
+please uncomment the below line
+# PasswordAuthentication yes/no
+we will remove # from below line and "no" for disable and "yes" for enable the password authentication
+after that restart the service
